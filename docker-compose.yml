@@ -1,0 +1,169 @@
+
+# ── Networks ──────────────────────────────────────────────────────────────────
+networks:
+  crm-net:
+    driver: bridge
+
+# ── Volumes ───────────────────────────────────────────────────────────────────
+volumes:
+  postgres-data:
+  zookeeper-data:
+  kafka-data:
+
+# ══════════════════════════════════════════════════════════════════════════════
+services:
+
+  # ── PostgreSQL ──────────────────────────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    container_name: crm-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB:       crm_db
+      POSTGRES_USER:     postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      # Auto-runs schema.sql on first boot
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    ports:
+      - "5432:5432"         # expose for local psql / pgAdmin access
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d crm_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - crm-net
+
+  # ── Zookeeper (required by Kafka) ───────────────────────────────────────────
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.6.1
+    container_name: crm-zookeeper
+    restart: unless-stopped
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME:   2000
+      ZOOKEEPER_LOG4J_ROOT_LOGLEVEL: WARN
+    volumes:
+      - zookeeper-data:/var/lib/zookeeper/data
+    networks:
+      - crm-net
+    # nc -z just checks if port 2181 is open — no data exchange needed
+    # More reliable than "echo ruok | nc ... | grep imok" across all images
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z localhost 2181 || exit 1"]
+      interval: 10s
+      timeout: 10s
+      retries: 15
+      start_period: 30s
+
+  # ── Kafka broker ────────────────────────────────────────────────────────────
+  kafka:
+    image: confluentinc/cp-kafka:7.6.1
+    container_name: crm-kafka
+    restart: unless-stopped
+    depends_on:
+      zookeeper:
+        condition: service_healthy
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+
+      # Internal listener for inter-container traffic; external for host access
+      KAFKA_LISTENERS:                        INTERNAL://0.0.0.0:29092,EXTERNAL://0.0.0.0:9092
+      KAFKA_ADVERTISED_LISTENERS:             INTERNAL://kafka:29092,EXTERNAL://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP:   INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME:       INTERNAL
+
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+      KAFKA_NUM_PARTITIONS:            3       # parallelism for consumer scaling
+      KAFKA_DEFAULT_REPLICATION_FACTOR: 1      # single broker — set to 3 in prod
+      KAFKA_LOG_RETENTION_HOURS:       168     # 7 days
+      KAFKA_LOG4J_ROOT_LOGLEVEL:       WARN
+    volumes:
+      - kafka-data:/var/lib/kafka/data
+    ports:
+      - "9092:9092"         # expose for local kafka-cli / debugging
+    networks:
+      - crm-net
+    healthcheck:
+      test: ["CMD-SHELL", "kafka-topics --bootstrap-server localhost:9092 --list"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 30s
+
+  # ── CRM API server ───────────────────────────────────────────────────────────
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: crm-backend
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    env_file: .env
+    environment:
+      # Override specific values for Docker networking
+      DATABASE_URL:            postgresql://postgres:postgres@postgres:5432/crm_db
+      KAFKA_BOOTSTRAP_SERVERS: kafka:29092          # use internal listener
+      ENV:                     production
+    ports:
+      - "8000:8000"
+    networks:
+      - crm-net
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8000/api/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+  # ── Kafka consumer worker ────────────────────────────────────────────────────
+  # Processes fte.tickets.incoming → AI agent → fte.responses.outgoing
+  # Scale with: docker-compose up --scale kafka-worker=3
+  kafka-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: crm-kafka-worker
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    env_file: .env
+    environment:
+      DATABASE_URL:            postgresql://postgres:postgres@postgres:5432/crm_db
+      KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+      KAFKA_CONSUMER_GROUP:    crm-agent-workers
+      ENV:                     production
+    # Override the CMD from Dockerfile to run the consumer
+    command:
+      - python
+      - -m
+      - kafka.consumer
+    networks:
+      - crm-net
+
+  # ── Next.js frontend (optional — comment out if serving separately) ──────────
+  frontend:
+    image: node:20-alpine
+    container_name: crm-frontend
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    environment:
+      NEXT_PUBLIC_API_URL: http://backend:8000
+    command: sh -c "npm install && npm run dev"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - crm-net

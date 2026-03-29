@@ -1,0 +1,352 @@
+[
+  {
+    "id": "T001",
+    "channel": "email",
+    "customer_name": "Sarah Mitchell",
+    "customer_email": "sarah.mitchell@brightnest.com",
+    "subject": "Cannot reset my password — urgent",
+    "message": "Hi Flowdesk Support,\n\nI've been trying to reset my password for the past two hours and I'm completely stuck. I click 'Forgot Password', enter my email, and I get the confirmation message saying a reset link has been sent — but nothing arrives in my inbox. I've checked my spam folder multiple times and there's absolutely nothing there.\n\nThis is really frustrating because I have a client call in 45 minutes and I need to pull up our support history before that meeting. Is there any way you can manually reset my account or send the link to an alternative email?\n\nMy account email is sarah.mitchell@brightnest.com and my company is BrightNest Co. We've been customers for about 8 months.\n\nPlease respond as fast as possible.\n\nThank you,\nSarah Mitchell\nHead of Customer Experience\nBrightNest Co.",
+    "category": "account_access",
+    "sentiment": "frustrated"
+  },
+  {
+    "id": "T002",
+    "channel": "whatsapp",
+    "customer_name": "James Okafor",
+    "customer_email": "james@taptrade.ng",
+    "subject": null,
+    "message": "hi is flowdesk down? my team cant load the inbox since like 30 mins ago",
+    "category": "outage_report",
+    "sentiment": "concerned"
+  },
+  {
+    "id": "T003",
+    "channel": "web",
+    "customer_name": "Priya Nair",
+    "customer_email": "priya@luminos.io",
+    "subject": "How do I invite my team members?",
+    "message": "Hello! I just signed up for Flowdesk and I love it so far. I'm on the Growth plan. I want to add 3 more people from my support team but I can't find where to invite them. I checked the Settings menu but got confused. Can you walk me through the steps?",
+    "category": "how_to",
+    "sentiment": "positive"
+  },
+  {
+    "id": "T004",
+    "channel": "email",
+    "customer_name": "Derek Vance",
+    "customer_email": "derek.vance@novaretail.com",
+    "subject": "REFUND REQUEST — charged twice this month",
+    "message": "To Whom It May Concern,\n\nI am writing to formally request a refund. I was charged $149 on March 1st and again on March 8th. That is two charges in the same billing cycle and I have no idea why. I did not change my plan and I certainly did not authorize a second charge.\n\nI have already contacted my bank about this. If this is not resolved within 48 hours, I will be disputing both charges and canceling my account. I have been a paying customer since January 2024 and this is unacceptable.\n\nPlease review my account immediately and issue a refund for the duplicate charge.\n\nDerek Vance\nOperations Director\nNova Retail Group\nderek.vance@novaretail.com\n+1 (512) 555-0198",
+    "category": "billing_dispute",
+    "sentiment": "angry"
+  },
+  {
+    "id": "T005",
+    "channel": "whatsapp",
+    "customer_name": "Amara Diallo",
+    "customer_email": "amara@shopkora.com",
+    "subject": null,
+    "message": "Hey! Quick question — does Flowdesk work with WhatsApp Business API or only regular WhatsApp?",
+    "category": "how_to",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "T006",
+    "channel": "web",
+    "customer_name": "Tom Ellison",
+    "customer_email": "tellison@craftbrew.co",
+    "subject": "Gmail not syncing anymore",
+    "message": "Hi there. My Gmail stopped syncing about 2 days ago. All the emails we receive on our support inbox are not showing up in Flowdesk. I tried disconnecting and reconnecting the Gmail account but after reconnecting it just says 'Syncing...' and never actually loads anything. Our whole team is basically blind right now. Please help.",
+    "category": "bug_report",
+    "sentiment": "frustrated"
+  },
+  {
+    "id": "T007",
+    "channel": "email",
+    "customer_name": "Rebecca Lim",
+    "customer_email": "rebecca@pixelforge.sg",
+    "subject": "Pricing question — upgrading from Starter to Growth",
+    "message": "Hi,\n\nWe're currently on the Starter plan and we're hitting the AI response limit quite often now. I'd like to understand the pricing difference between Starter and Growth, and whether upgrading mid-cycle would result in a prorated charge or a full charge.\n\nAlso, do you offer any discount for annual billing? We're a startup and cost efficiency is really important for us right now.\n\nHappy to jump on a call if needed.\n\nThanks,\nRebecca Lim\nCTO, PixelForge\nrebecca@pixelforge.sg",
+    "category": "pricing",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "T008",
+    "channel": "whatsapp",
+    "customer_name": "Carlos Mendez",
+    "customer_email": "carlos@fitlinkapp.com",
+    "subject": null,
+    "message": "The chat widget disappeared from our website overnight. We didn't change anything. Customers are complaining.",
+    "category": "bug_report",
+    "sentiment": "alarmed"
+  },
+  {
+    "id": "T009",
+    "channel": "web",
+    "customer_name": "Fatima Al-Rashid",
+    "customer_email": "fatima@halazone.ae",
+    "subject": "Is Flowdesk GDPR compliant?",
+    "message": "Hello, we are based in the UAE and we have European customers. Before we expand our usage of Flowdesk, our legal team wants to confirm whether Flowdesk is GDPR compliant and if there's a Data Processing Agreement (DPA) we can sign. Can you send me the relevant documentation?",
+    "category": "legal_compliance",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "T010",
+    "channel": "email",
+    "customer_name": "Nathan Kowalski",
+    "customer_email": "n.kowalski@edgeworks.pl",
+    "subject": "AI agent keeps giving wrong answers about our product",
+    "message": "Hello Support,\n\nWe've been using the AI agent feature for about 3 weeks now and we're noticing it regularly gives incorrect information to our customers. For example, a customer asked about our return policy and the AI responded with something completely fabricated — it said 'returns are accepted within 60 days' which is completely wrong. Our return policy is 14 days.\n\nI've tried to update the training data but I'm not sure I'm doing it correctly. The 'Retrain' button doesn't seem to do anything obvious. Could you walk me through the proper process for updating the AI's knowledge base?\n\nAlso, is there a way to review all conversations where the AI responded incorrectly?\n\nBest regards,\nNathan Kowalski\nEdgeworks Solutions",
+    "category": "ai_issue",
+    "sentiment": "concerned"
+  },
+  {
+    "id": "T011",
+    "channel": "whatsapp",
+    "customer_name": "Grace Huang",
+    "customer_email": "grace@bloomco.hk",
+    "subject": null,
+    "message": "do you have a mobile app? or is it only web?",
+    "category": "product_question",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "T012",
+    "channel": "web",
+    "customer_name": "Liam Burke",
+    "customer_email": "liam.burke@groundwork.ie",
+    "subject": "Can I export all my conversation data?",
+    "message": "Hi, we are switching our internal systems and I need to export all historical conversation data from Flowdesk. Is there an export feature? If so, what formats are supported (CSV, JSON, PDF)? And is there a limit on how far back the export goes? We have been using Flowdesk for about 14 months.",
+    "category": "data_export",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "T013",
+    "channel": "email",
+    "customer_name": "Yusuf Abubakar",
+    "customer_email": "yusuf@techbridge.ng",
+    "subject": "This is absolutely unacceptable — my account was suspended without warning",
+    "message": "I am FURIOUS right now.\n\nI logged into my Flowdesk account this morning and got a message saying my account has been suspended. No warning email, no explanation, nothing. My entire support operation is now down. I have 6 agents who cannot work. This is costing me money every single minute.\n\nI am a Scale plan customer paying $399/month. I expect a certain level of service for that price. This is the SECOND time something like this has happened in 3 months.\n\nI demand:\n1. Immediate account restoration\n2. A full explanation of why this happened\n3. A credit for the downtime\n4. A guarantee this will not happen again\n\nIf I don't hear back within 2 hours, I will be contacting my lawyer and posting about this on every review platform I can find.\n\nYusuf Abubakar\nCEO, TechBridge Nigeria",
+    "category": "account_suspended",
+    "sentiment": "very_angry"
+  },
+  {
+    "id": "T014",
+    "channel": "whatsapp",
+    "customer_name": "Sophie Laurent",
+    "customer_email": "sophie@atelier-web.fr",
+    "subject": null,
+    "message": "Bonjour! Can I use Flowdesk in French? Is there a French language option for the interface?",
+    "category": "product_question",
+    "sentiment": "positive"
+  },
+  {
+    "id": "T015",
+    "channel": "web",
+    "customer_name": "Marcus Reed",
+    "customer_email": "mreed@apexlogistics.com",
+    "subject": "Need to cancel my account",
+    "message": "Hi, I need to cancel my Flowdesk subscription. We've decided to go with a different tool that better fits our current needs. Can you let me know the cancellation process and confirm whether I'll still have access until the end of my current billing period? I don't want to be charged again next month.",
+    "category": "cancellation",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "T016",
+    "channel": "email",
+    "customer_name": "Ingrid Sorensen",
+    "customer_email": "ingrid.s@nordicfin.no",
+    "subject": "Security concern — unauthorized login attempt",
+    "message": "Hello,\n\nI received an email this morning saying there was a login attempt to my Flowdesk account from an IP address in Vietnam. I am based in Norway and I have never logged in from that location.\n\nI immediately changed my password but I am concerned about whether any data was accessed. We store sensitive customer conversation data in Flowdesk and a breach could have serious legal implications for us under GDPR.\n\nCan you please:\n1. Tell me if the login was successful\n2. Provide logs of recent account activity\n3. Let me know if any data was accessed or exported\n\nThis is a serious matter and I would appreciate an urgent response.\n\nIngrid Sorensen\nCompliance Officer, NordicFin",
+    "category": "security",
+    "sentiment": "alarmed"
+  },
+  {
+    "id": "T017",
+    "channel": "whatsapp",
+    "customer_name": "Raj Patel",
+    "customer_email": "raj@homesnap.in",
+    "subject": null,
+    "message": "hey quick one — if a customer messages us on whatsapp and email at the same time, do they get merged into one ticket?",
+    "category": "how_to",
+    "sentiment": "curious"
+  },
+  {
+    "id": "T018",
+    "channel": "web",
+    "customer_name": "Dana Owens",
+    "customer_email": "dana@sparkleclean.com",
+    "subject": "Canned responses not working",
+    "message": "Hello! I set up some canned responses yesterday but when I type the shortcut (like /greet) nothing happens. I'm using Chrome on Windows 11. My teammates can use theirs fine. Is this a browser issue or a permissions issue? I'm set as an Agent role if that matters.",
+    "category": "bug_report",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "T019",
+    "channel": "email",
+    "customer_name": "Oliver Chan",
+    "customer_email": "oliver@growthstack.ca",
+    "subject": "Feature request: bulk close conversations",
+    "message": "Hi Flowdesk team,\n\nLove the product overall. One thing that's been a pain point for us: there's no way to bulk close or bulk archive conversations. We sometimes get 50-100 automated notifications from our system that land in the inbox and we have to close them one by one. This is a big time drain for our agents.\n\nIs this something on the roadmap? And in the meantime, is there any workaround — maybe through the API or automation rules?\n\nThanks,\nOliver Chan\nGrowthStack",
+    "category": "feature_request",
+    "sentiment": "positive"
+  },
+  {
+    "id": "T020",
+    "channel": "whatsapp",
+    "customer_name": "Aisha Kamara",
+    "customer_email": "aisha@klearcuts.sl",
+    "subject": null,
+    "message": "my password reset link expired. i clicked it too late. how do i get a new one?",
+    "category": "account_access",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "T021",
+    "channel": "web",
+    "customer_name": "Ben Nakamura",
+    "customer_email": "ben@driftwave.jp",
+    "subject": "How does the AI confidence score work?",
+    "message": "Hi there! I'm trying to configure the AI agent and I see a 'Confidence Threshold' setting. Currently it's at 75%. What exactly does this mean? If I lower it to 50%, will the AI answer more questions but risk being less accurate? And if I raise it to 90%, will it escalate almost everything? I want to find the right balance for our team.",
+    "category": "how_to",
+    "sentiment": "curious"
+  },
+  {
+    "id": "T022",
+    "channel": "email",
+    "customer_name": "Claudia Reyes",
+    "customer_email": "claudia@vertexpay.mx",
+    "subject": "Possible bug: CSAT survey being sent twice",
+    "message": "Hello,\n\nWe've started getting complaints from customers saying they're receiving the CSAT survey twice after a conversation is resolved — once immediately and again about 24 hours later. This is confusing our customers and lowering their impression of us.\n\nI checked our automation settings and I only see one CSAT trigger configured. I haven't changed anything recently. Is this a known bug? I'd like this fixed as soon as possible since it's directly affecting our customer satisfaction data.\n\nPlease advise.\n\nClaudia Reyes\nSupport Lead, VertexPay",
+    "category": "bug_report",
+    "sentiment": "concerned"
+  },
+  {
+    "id": "T023",
+    "channel": "whatsapp",
+    "customer_name": "Felix Graber",
+    "customer_email": "felix@bauhaus-digital.de",
+    "subject": null,
+    "message": "Is there an API I can use to create tickets programmatically from my app?",
+    "category": "product_question",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "T024",
+    "channel": "web",
+    "customer_name": "Michelle Osei",
+    "customer_email": "michelle@kente360.gh",
+    "subject": "I want a refund — this tool is not what was advertised",
+    "message": "I signed up for Flowdesk based on the website saying the AI agent can handle customer messages automatically. But after two weeks, the AI is barely answering anything and everything gets sent to our human agents anyway. This is NOT what was advertised. I'm a small business owner and I cannot afford to waste $149/month on something that doesn't work as promised. I want a full refund. I'm still within the trial period technically because I upgraded on day 12. Please process this immediately.",
+    "category": "refund_request",
+    "sentiment": "angry"
+  },
+  {
+    "id": "T025",
+    "channel": "email",
+    "customer_name": "Tomás Ferreira",
+    "customer_email": "tomas@logistix.pt",
+    "subject": "Enterprise plan inquiry",
+    "message": "Hello Flowdesk Team,\n\nWe are a logistics company based in Portugal with approximately 250 support agents. We are currently evaluating helpdesk platforms and Flowdesk is one of our top candidates.\n\nWe would like to discuss the Enterprise plan in detail, including:\n- Custom SLA guarantees\n- Dedicated infrastructure / single-tenant options\n- SSO / SAML integration\n- Volume pricing\n- Onboarding and training support\n- Portuguese language support for the AI agent\n\nWho is the right person to speak with? We'd prefer a call or video meeting.\n\nBest regards,\nTomás Ferreira\nHead of IT Operations\nLogistix Portugal",
+    "category": "enterprise_inquiry",
+    "sentiment": "positive"
+  },
+  {
+    "id": "T026",
+    "channel": "whatsapp",
+    "customer_name": "Kenji Ito",
+    "customer_email": "kenji@zenflow.jp",
+    "subject": null,
+    "message": "notification sounds are not working on the desktop app. anyone else having this problem?",
+    "category": "bug_report",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "T027",
+    "channel": "web",
+    "customer_name": "Nia Thompson",
+    "customer_email": "nia@springboardhq.com",
+    "subject": "Stripe integration not showing customer data",
+    "message": "Hi! I connected Stripe to Flowdesk yesterday. The integration shows as 'Connected' in settings but when I open a conversation from a paying customer, the sidebar doesn't show any billing info. I've triple-checked that the customer's email in Flowdesk matches what's in Stripe. What am I missing?",
+    "category": "integration_issue",
+    "sentiment": "confused"
+  },
+  {
+    "id": "T028",
+    "channel": "email",
+    "customer_name": "Hassan Al-Amin",
+    "customer_email": "hassan@dawatech.sa",
+    "subject": "Legal notice — unauthorized use of company name in case study",
+    "message": "Dear Flowdesk Legal Team,\n\nIt has come to our attention that Flowdesk has referenced DawaTech in a public case study on your website without our prior written consent. Our legal team considers this an unauthorized use of our company's name and branding.\n\nWe request that you immediately remove the reference to DawaTech from your website, blog, and any marketing materials. If this is not done within 5 business days, we will be forced to pursue formal legal action.\n\nPlease respond to this email and confirm the removal, or have your legal counsel contact us directly at legal@dawatech.sa.\n\nSincerely,\nHassan Al-Amin\nGeneral Counsel, DawaTech",
+    "category": "legal_issue",
+    "sentiment": "formal_threatening"
+  },
+  {
+    "id": "T029",
+    "channel": "whatsapp",
+    "customer_name": "Lucy Wambua",
+    "customer_email": "lucy@nairobi-eats.ke",
+    "subject": null,
+    "message": "how many conversations can I have open at the same time? is there a limit?",
+    "category": "product_question",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "T030",
+    "channel": "web",
+    "customer_name": "Daniel Obi",
+    "customer_email": "daniel@techsavvyng.com",
+    "subject": "Agent performance report shows wrong data",
+    "message": "Hello, I'm looking at the Agent Performance report for last month and the numbers don't add up. It says one of my agents (Maria) resolved 0 conversations in March, but I can clearly see she responded to and resolved dozens of conversations when I look at the inbox manually. Is this a reporting bug? This is causing issues because we tie performance bonuses to these numbers.",
+    "category": "bug_report",
+    "sentiment": "frustrated"
+  },
+  {
+    "id": "T031",
+    "channel": "email",
+    "customer_name": "Elena Vasquez",
+    "customer_email": "elena@colorwave.co",
+    "subject": "Love Flowdesk — just one small issue with 2FA",
+    "message": "Hi Flowdesk team,\n\nFirst of all, huge fan of the product. We switched from Zendesk 4 months ago and haven't looked back. The AI agent alone has saved us about 15 hours per week.\n\nOne small thing: I set up 2FA last week and it's working fine on my laptop. But when I try to log in from my iPhone, I enter the correct 6-digit code and it says 'Invalid code'. I've made sure my phone time is correct. Is there a known issue with iOS or Safari? Or is there something specific I need to do for mobile?\n\nThanks!\nElena Vasquez\nColorWave Studio",
+    "category": "account_access",
+    "sentiment": "positive"
+  },
+  {
+    "id": "T032",
+    "channel": "whatsapp",
+    "customer_name": "Abdo Trabelsi",
+    "customer_email": "abdo@speedship.tn",
+    "subject": null,
+    "message": "can flowdesk send automated follow up messages after a ticket is closed?",
+    "category": "how_to",
+    "sentiment": "curious"
+  },
+  {
+    "id": "T033",
+    "channel": "web",
+    "customer_name": "Portia Nkosi",
+    "customer_email": "portia@rooibok.co.za",
+    "subject": "Pricing — do you charge per agent or per conversation?",
+    "message": "Hi there, I'm evaluating Flowdesk for our team. I want to understand exactly how the pricing model works. Do you charge per agent seat, per conversation, or per message? We have about 8 support agents and we handle roughly 2,000 conversations per month. I want to make sure I understand what we'd pay before signing up.",
+    "category": "pricing",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "T034",
+    "channel": "email",
+    "customer_name": "Marco Gentile",
+    "customer_email": "marco@italiatech.it",
+    "subject": "Flowdesk API rate limits — need higher limits for our integration",
+    "message": "Hello,\n\nWe have built a custom integration between Flowdesk and our internal CRM using the Flowdesk API. Everything works well, but we are hitting the API rate limit (1,000 requests/hour) regularly during peak hours.\n\nWe are currently on the Growth plan. Is there a way to increase the rate limit? Are higher limits available on the Scale or Enterprise plan? Or could we discuss a custom arrangement?\n\nOur tech lead can provide more technical context if needed.\n\nThanks,\nMarco Gentile\nItaliaTech SRL",
+    "category": "api_limits",
+    "sentiment": "neutral"
+  },
+  {
+    "id": "T035",
+    "channel": "whatsapp",
+    "customer_name": "Zara Okonkwo",
+    "customer_email": "zara@fashionhubng.com",
+    "subject": null,
+    "message": "i was promised a 30% discount by someone on your sales team last week but now i cant find the promo link they sent. can you apply it manually?",
+    "category": "pricing",
+    "sentiment": "frustrated"
+  }
+]
