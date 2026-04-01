@@ -21,6 +21,10 @@ google-api-python-client==2.127.0
 
 # ── WhatsApp ──────────────────────────────────────────────────────────────────
 httpx==0.27.0
+twilio>=9.0.0                      # Twilio Sandbox WhatsApp integration
+streamlit>=1.35.0                  # Lead UI
+flask>=3.0.0                       # Lead Management API (port 5050)
+requests>=2.31.0                   # Streamlit → Flask HTTP calls
 
 # ── Kafka (async) ─────────────────────────────────────────────────────────────
 aiokafka==0.10.0

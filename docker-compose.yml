@@ -78,7 +78,20 @@ services:
 
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
       KAFKA_NUM_PARTITIONS:            3       # parallelism for consumer scaling
-      KAFKA_DEFAULT_REPLICATION_FACTOR: 1      # single broker — set to 3 in prod
+
+      # ── Replication (single-broker dev setup) ───────────────────────────────
+      # KAFKA_DEFAULT_REPLICATION_FACTOR only covers user-created topics.
+      # Internal topics (__consumer_offsets, __transaction_state) have their
+      # own settings that default to 3 — causing GroupCoordinatorNotAvailable
+      # with a single broker. All three must be set to 1 explicitly.
+      KAFKA_DEFAULT_REPLICATION_FACTOR:                  1
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR:            1   # fixes GroupCoordinatorNotAvailableError
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR:    1   # fixes TransactionCoordinator errors
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR:               1   # min in-sync replicas for tx log
+
+      # Speed up consumer group rebalancing on startup (0 ms delay for dev)
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS:            0
+
       KAFKA_LOG_RETENTION_HOURS:       168     # 7 days
       KAFKA_LOG4J_ROOT_LOGLEVEL:       WARN
     volumes:

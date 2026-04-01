@@ -15,12 +15,16 @@ Usage:
     python tests/test_system.py --url http://localhost:8000
 """
 
+import io
+import sys
 import json
 import argparse
 import urllib.request
 import urllib.error
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
 DEFAULT_URL = "http://localhost:8000/api"
 

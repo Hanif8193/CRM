@@ -13,11 +13,14 @@ Usage:
     python tests/demo.py --url http://localhost:8000
 """
 
+import io
 import json
 import sys
 import time
 import argparse
 import urllib.request
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 import urllib.error
 
 DEFAULT_URL = "http://localhost:8000/api"

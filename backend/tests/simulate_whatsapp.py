@@ -10,11 +10,15 @@ Usage:
     python tests/simulate_whatsapp.py --url http://localhost:8000
 """
 
+import io
+import sys
 import json
 import time
 import argparse
 import urllib.request
 import urllib.error
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
 # ── Config ────────────────────────────────────────────────────────────────────
 
