@@ -1,7 +1,7 @@
 # ── Web framework ─────────────────────────────────────────────────────────────
 fastapi==0.111.0
-uvicorn[standard]==0.29.0          # [standard] adds watchfiles + websockets
-starlette==0.37.2                  # pinned to match fastapi
+uvicorn==0.29.0
+starlette==0.37.2
 mangum==0.17.0                     # ASGI adapter for Vercel / AWS Lambda
 
 # ── Database ──────────────────────────────────────────────────────────────────
@@ -20,23 +20,12 @@ google-auth==2.29.0
 google-auth-oauthlib==1.2.0
 google-api-python-client==2.127.0
 
-# ── WhatsApp ──────────────────────────────────────────────────────────────────
+# ── WhatsApp / Twilio ─────────────────────────────────────────────────────────
 httpx==0.27.0
-twilio>=9.0.0                      # Twilio Sandbox WhatsApp integration
-streamlit>=1.35.0                  # Lead UI
-flask>=3.0.0                       # Lead Management API (port 5050)
-requests>=2.31.0                   # Streamlit → Flask HTTP calls
-
-# ── Kafka (async) ─────────────────────────────────────────────────────────────
-aiokafka==0.10.0
+twilio>=9.0.0
 
 # ── Logging ───────────────────────────────────────────────────────────────────
 python-json-logger==2.0.7
 
-# ── Error tracking (optional — remove if you don't use Sentry) ───────────────
+# ── Error tracking (optional) ─────────────────────────────────────────────────
 sentry-sdk[fastapi]==2.3.1
-
-# ── Testing ───────────────────────────────────────────────────────────────────
-pytest==8.2.0
-pytest-asyncio==0.23.6
-httpx==0.27.0                      # needed by fastapi TestClient
